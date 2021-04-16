@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="375.0">
+         <children>
+            <Label layoutX="125.0" layoutY="47.0" text="name" />
+            <Label layoutX="125.0" layoutY="92.0" text="Label" />
+            <Label layoutX="125.0" layoutY="134.0" text="Label" />
+            <TextField fx:id="labelleName" layoutX="189.0" layoutY="43.0" onAction="#ActionName" promptText="ecrivez votre nom " />
+            <TextField layoutX="189.0" layoutY="88.0" />
+            <TextArea layoutX="188.0" layoutY="134.0" prefHeight="57.0" prefWidth="150.0" />
+            <ImageView fitHeight="104.0" fitWidth="93.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField GridPane.rowIndex="1" />
+   </children>
+</GridPane>
