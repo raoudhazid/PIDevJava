@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="769.0" style="-fx-background-color: #fff;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDetailRecController">
+   <children>
+      <VBox prefHeight="440.0" prefWidth="208.0" style="-fx-background-color: #333645;">
+         <children>
+            <Label prefHeight="70.0" prefWidth="218.0" text="Admin Panel" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/11.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane prefHeight="170.0" prefWidth="260.0">
+               <children>
+                   <JFXButton fx:id="btn_event" layoutY="80.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Voyage" textFill="#f2f0f0" />
+                  <JFXButton fx:id="btn_hotel" accessibleText="btn_feed" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Event" textFill="#fcf8f8" />
+                  <JFXButton fx:id="btn_voyage" layoutY="45.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Hotel" textFill="#f5efef" />
+                  <JFXButton fx:id="btn_shop" accessibleText="btn_feed" layoutX="7.0" layoutY="125.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Shopping Mall" textFill="#fcf8f8" />
+
+               </children>
+            </AnchorPane>
+             <JFXButton fx:id="btn_rec" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Reclamation" textFill="#fcf8f8" />
+         </children></VBox>
+      <JFXButton fx:id="logout" layoutX="653.0" layoutY="14.0" style="-fx-background-color: #333645;" text="LOG OUT" textFill="#fafbfc" />
+      <Label text="Label" />
+      <Label layoutX="238.0" layoutY="56.0" prefHeight="45.0" prefWidth="83.0" text="Type :" />
+      <Label fx:id="type" layoutX="368.0" layoutY="68.0" prefHeight="21.0" prefWidth="62.0" text="a" />
+      <Label layoutX="238.0" layoutY="124.0" text="Message" />
+      <Label fx:id="message" layoutX="364.0" layoutY="124.0" text="b" />
+     
+      
+      <Label layoutX="238.0" layoutY="188.0" text="Date" />
+      <Label fx:id="date" layoutX="365.0" layoutY="191.0" text="d" />
+    
+      <JFXButton fx:id="savetoword" layoutX="399.0" layoutY="341.0" onAction="#savetoword" prefHeight="45.0" prefWidth="143.0" style="-fx-background-color: pink;" text="Telecharger Pdf" />
+      <Label alignment="CENTER" layoutX="335.0" layoutY="11.0" prefHeight="38.0" prefWidth="221.0" style="-fx-background-color: pink;" text="Votre Réclamation" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
