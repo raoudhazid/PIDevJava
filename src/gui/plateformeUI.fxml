@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="856.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PlateformeUI">
+   <top>
+      <HBox prefHeight="40.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #131022;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="36.0" prefWidth="189.0" text="Welcome!" textFill="#f5caca">
+               <font>
+                  <Font name="Berlin Sans FB" size="39.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="47.0" prefWidth="0.0" />
+            <Pane prefHeight="43.0" prefWidth="284.0" style="-fx-background-radius: 20 20 0 0;" styleClass="linear-grad" stylesheets="@../public/css/fullpackstyling.css">
+               <children>
+                  <ImageView fitHeight="38.0" fitWidth="34.0" layoutX="236.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../public/img/ic_usr.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="189.0" layoutY="9.0" text="Hello!" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="goToHome" alignment="CENTER" layoutX="26.0" layoutY="9.0" mnemonicParsing="false" onAction="#btnHome" prefHeight="39.0" prefWidth="141.0" style="-fx-background-color: #ffffff;" text="Enjoy Music!" textFill="#6494e1">
+                     <font>
+                        <Font name="Bell MT Bold" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </HBox>
+   </top>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="230.0" style="-fx-background-color: #131022;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="176.0" prefWidth="230.0" style="-fx-background-color: #131022;">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fx:id="adminPage" fill="#ddb1b1" glyphName="USER" size="30" />
+                        <Label prefHeight="21.0" prefWidth="140.0" text="Consulter admin page" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="42.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="#ddb1b1" glyphName="HOME" size="30" />
+                        <Label prefHeight="21.0" prefWidth="143.0" text="Gérer Plateforme" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="60.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="#ddb1b1" glyphName="HOME" size="30" />
+                        <Label prefHeight="21.0" prefWidth="143.0" text="------" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="10.0" layoutY="10.0" prefHeight="220.0" prefWidth="165.0" style="-fx-background-color: #131022;">
+               <children>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="31.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="#ddb1b1" glyphName="STAR" size="30" wrappingWidth="24.14285707473755" />
+                        <Label prefHeight="21.0" prefWidth="144.0" text="------" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="81.0" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="#ddb1b1" glyphName="BOOK" size="30" />
+                        <Label prefHeight="21.0" prefWidth="144.0" text="-------" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0" styleClass="mousemo">
+                     <children>
+                        <FontAwesomeIconView fill="#ddb1b1" glyphName="HOME" size="30" text="" />
+                        <Label prefHeight="21.0" prefWidth="149.0" text="--------------" textFill="#5e778a">
+                           <font>
+                              <Font name="Berlin Sans FB" size="19.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="187.0" prefWidth="230.0" spacing="20.0">
+               <children>
+                  <VBox prefHeight="187.0" prefWidth="230.0" style="-fx-background-color: #131022;">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="188.0" text="Envoyez à nous un mail!" textFill="#eeecec">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="adresse_txt" text="objet" unFocusColor="#eeeaea" />
+                        <JFXTextArea fx:id="description_txt" prefHeight="61.0" prefWidth="230.0" text="ecrivez votre mail " unFocusColor="#e8dddd" />
+                        <Button mnemonicParsing="false" onMouseClicked="#mailfonction" prefHeight="51.0" prefWidth="207.0" style="-fx-background-color: yellow;" text="Envoyez">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" top="30.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children></HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox prefHeight="544.0" prefWidth="626.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="32.0" prefWidth="196.0" text="Recommended" textFill="#287da1">
+               <font>
+                  <Font name="Berlin Sans FB" size="29.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="43.0" prefWidth="152.0" />
+            <ScrollPane prefHeight="165.0" prefWidth="626.0">
+               <content>
+                  <HBox fx:id="hboxfirst" prefHeight="140.0" prefWidth="940.0" spacing="20.0" style="-fx-background-color: #A9A9A9 #A9A9A9;" />
+               </content>
+            </ScrollPane>
+            <ScrollPane prefHeight="283.0" prefWidth="626.0">
+               <content>
+                  <HBox fx:id="hbox" prefHeight="346.0" prefWidth="1121.0" spacing="20.0" style="-fx-background-color: #A9A9A9 #A9A9A9;">
+                     <padding>
+                        <Insets top="30.0" />
+                     </padding>
+                  </HBox>
+               </content>
+               <VBox.margin>
+                  <Insets top="100.0" />
+               </VBox.margin>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
