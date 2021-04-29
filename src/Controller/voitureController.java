@@ -22,7 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import Service.ServiceFormation;
+import Service.ServiceVoiture;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -43,6 +43,7 @@ public class voitureController implements Initializable {
 
 
     public ImageView imageView;
+    public Button user_button;
     String imagePath = null;
 
     private File file;
@@ -68,7 +69,7 @@ public class voitureController implements Initializable {
     private Button button;
 
     @FXML
-    private TextField txt_color1;
+    private TextField txt_nbPlace;
 
     @FXML
     private TextField txt_prix;
@@ -77,7 +78,7 @@ public class voitureController implements Initializable {
     private TableView<Voiture> table_users;
 
     @FXML
-    private TableColumn<Voiture, String> col_id;
+    private TableColumn<Voiture, Integer> col_id;
 
     @FXML
     private TableColumn<Voiture, String> col_matricule;
@@ -130,21 +131,23 @@ public class voitureController implements Initializable {
 
     public void Add_users () throws SQLException {
 
-        if(txt_mat.getText().isEmpty() || txt_color1.getText().isEmpty() ||
-                txt_prix.getText().isEmpty()|| text_marque.getText().isEmpty() ||
-                txt_model.getText().isEmpty()|| txt_color.getText().isEmpty()|| imagePath== null){
+        if(txt_mat.getText().isEmpty()
+                || txt_nbPlace.getText().isEmpty()
+                || txt_prix.getText().isEmpty()
+                || text_marque.getText().isEmpty()
+                || txt_model.getText().isEmpty()
+                || txt_color.getText().isEmpty()
+                || imagePath== null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Insert Failed, information missing");
             alert.show();
-
-
-
-
         }
         else{
             Voiture t = new Voiture(null, txt_mat.getText(),
-                    txt_color1.getText(),txt_prix.getText(),text_marque.getText(),txt_model.getText(),txt_color.getText(),imagePath);
-            ServiceFormation st= new ServiceFormation();
+                    txt_nbPlace.getText(),txt_prix.getText(),
+                    text_marque.getText(),txt_model.getText(),
+                    txt_color.getText(),imagePath);
+            ServiceVoiture st= new ServiceVoiture();
             st.add(t);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setContentText("Ajout succes");
@@ -167,11 +170,13 @@ public class voitureController implements Initializable {
         }
         txt_id.setText(col_id.getCellData(index).toString());
         txt_mat.setText(col_matricule.getCellData(index).toString());
-        txt_color1.setText(placeCol.getCellData(index).toString());
-        txt_prix.setText(prixColn.getCellData(index).toString());
         text_marque.setText(col_marque.getCellData(index).toString());
         txt_model.setText(col_modele.getCellData(index).toString());
         txt_color.setText(colorColn.getCellData(index).toString());
+        txt_nbPlace.setText(placeCol.getCellData(index).toString());
+        txt_prix.setText(prixColn.getCellData(index).toString());
+
+
 
 
         /**********************************/
@@ -185,15 +190,25 @@ public class voitureController implements Initializable {
 
     public void Edit () throws SQLException {
 
-        if(txt_mat.getText().isEmpty() || txt_color1.getText().isEmpty() ||
-                txt_prix.getText().isEmpty()|| text_marque.getText().isEmpty() ||
-                txt_model.getText().isEmpty()|| txt_color.getText().isEmpty()){
+        if(txt_mat.getText().isEmpty()
+                || txt_nbPlace.getText().isEmpty()
+                || txt_prix.getText().isEmpty()
+                || text_marque.getText().isEmpty()
+                || txt_model.getText().isEmpty()
+                || txt_color.getText().isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Update Failed, information missing");
             alert.show();
         }
-        else{Voiture t = new Voiture(table_users.getSelectionModel().getSelectedItem().getId(), txt_mat.getText(),txt_color1.getText(),txt_prix.getText(),text_marque.getText(),txt_model.getText(),txt_color.getText(),imagePath);
-            ServiceFormation st= new ServiceFormation();
+        else{Voiture t = new Voiture(table_users.getSelectionModel().getSelectedItem().getId(),
+                txt_mat.getText(),
+                txt_nbPlace.getText(),
+                txt_prix.getText(),
+                text_marque.getText(),
+                txt_model.getText(),
+                txt_color.getText(),
+                imagePath);
+            ServiceVoiture st= new ServiceVoiture();
             st.update(t);
             UpdateTable();
             search_user();}
@@ -205,7 +220,7 @@ public class voitureController implements Initializable {
 
     public void Delete() throws SQLException {
 
-        ServiceFormation st= new ServiceFormation();
+        ServiceVoiture st= new ServiceVoiture();
         st.delete((long) table_users.getSelectionModel().getSelectedItem().getId());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText("Delete Success");
@@ -216,16 +231,15 @@ public class voitureController implements Initializable {
 
 
     public void UpdateTable(){
-        col_id.setCellValueFactory(new PropertyValueFactory<Voiture,String>("id"));
+        col_id.setCellValueFactory(new PropertyValueFactory<Voiture,Integer>("id"));
         col_matricule.setCellValueFactory(new PropertyValueFactory<Voiture,String>("matricule"));
-        placeCol.setCellValueFactory(new PropertyValueFactory<Voiture,String>("place"));
-        prixColn.setCellValueFactory(new PropertyValueFactory<Voiture,String>("prix"));
         col_marque.setCellValueFactory(new PropertyValueFactory<Voiture,String>("marque"));
-        col_modele.setCellValueFactory(new PropertyValueFactory<Voiture,String>("model"));
         colorColn.setCellValueFactory(new PropertyValueFactory<Voiture,String>("color"));
-
+        placeCol.setCellValueFactory(new PropertyValueFactory<Voiture,String>("nbplace"));
+        prixColn.setCellValueFactory(new PropertyValueFactory<Voiture,String>("prix"));
+        col_modele.setCellValueFactory(new PropertyValueFactory<Voiture,String>("modele"));
         imgCol.setCellValueFactory(new PropertyValueFactory<>("image"));
-      //  listM = DbConnect.getDatausers();
+        listM = DbConnect.getDatausers();
         table_users.setItems(listM);
     }
 
@@ -235,10 +249,10 @@ public class voitureController implements Initializable {
     @FXML
     void search_user() {
         col_matricule.setCellValueFactory(new PropertyValueFactory<Voiture,String>("matricule"));
-        placeCol.setCellValueFactory(new PropertyValueFactory<Voiture,String>("place"));
+        placeCol.setCellValueFactory(new PropertyValueFactory<Voiture,String>("nbplace"));
         prixColn.setCellValueFactory(new PropertyValueFactory<Voiture,String>("prix"));
         col_marque.setCellValueFactory(new PropertyValueFactory<Voiture,String>("marque"));
-        col_modele.setCellValueFactory(new PropertyValueFactory<Voiture,String>("model"));
+        col_modele.setCellValueFactory(new PropertyValueFactory<Voiture,String>("modele"));
         colorColn.setCellValueFactory(new PropertyValueFactory<Voiture,String>("color"));
 
         dataList = DbConnect.getDatausers();
@@ -287,7 +301,7 @@ public class voitureController implements Initializable {
         FileChooser fc = new FileChooser();
 
 
-        fc.setInitialDirectory(new File("C:\\Users\\zidra\\IdeaProjects\\pidev\\src\\resources"));
+        fc.setInitialDirectory(new File("C:\\Users\\Mohamed\\pidevjava\\src\\resources"));
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpg"));
         fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.jpeg"));
         File f = fc.showOpenDialog(null);
@@ -352,15 +366,16 @@ public class voitureController implements Initializable {
         Parent root  = FXMLLoader.load(getClass().getResource("../gui/tableViewFile2.fxml"));
 
         Stage window =(Stage) toaddfile.getScene().getWindow();
-        window.setScene(new Scene(root, 1000, 750));
+        window.setScene(new Scene(root, 880, 541));
     }
 
     public void showHandleBtn(ActionEvent event) throws Exception {
         Parent root  = FXMLLoader.load(getClass().getResource("../gui/plateformeUI.fxml"));
 
         Stage window =(Stage) showRelatedFiles.getScene().getWindow();
-        window.setScene(new Scene(root, 750, 500));
+        window.setScene(new Scene(root, 1500, 1700));
     }
+
 
     /**************************************************************************************/
 
