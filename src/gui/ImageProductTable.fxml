@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="540.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ImageProductTable">
+    <children>
+        <Pane layoutX="200.0" layoutY="85.0" prefHeight="3.0" prefWidth="684.0" style="-fx-background-color: BLACK;" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" />
+        <Text fill="#64726b" layoutX="208.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Product Icons" wrappingWidth="267.13671875">
+            <font>
+                <Font name="Bauhaus 93" size="32.0" />
+            </font>
+        </Text>
+        <HBox alignment="CENTER" layoutX="860.0" layoutY="-8.0" prefHeight="36.0" prefWidth="31.0" AnchorPane.rightAnchor="-5.0" AnchorPane.topAnchor="-8.0">
+            <children>
+                <FontAwesomeIconView fill="#eb1b1b" glyphName="CLOSE" onMouseClicked="#close" size="20" styleClass="btn" wrappingWidth="18.35714340209961" />
+            </children>
+        </HBox>
+        <ButtonBar layoutX="696.0" layoutY="103.0" prefHeight="40.0" prefWidth="178.0">
+            <buttons>
+                <Button fx:id="addFileB" layoutX="135.0" layoutY="14.0" mnemonicParsing="false" onAction="#addFile" onMouseClicked="#print" prefHeight="32.0" prefWidth="121.0" style="-fx-background-radius: 20 20 20 20; -fx-background-color: #333645;" text="User Interface" textFill="#fcfafa">
+                    <font>
+                        <Font size="13.0" />
+                    </font></Button>
+            </buttons>
+        </ButtonBar>
+        <TableView fx:id="TableFormation" layoutX="213.0" layoutY="169.0" prefHeight="316.0" prefWidth="575.0" styleClass="column-header" stylesheets="@../../../../../ESPRIT/Esprit/helpd/src/css/tableview.css">
+            <columns>
+                <TableColumn fx:id="idFile" prefWidth="78.0" text="ID" />
+                <TableColumn fx:id="id_formation" prefWidth="87.0" text="product_ID" />
+                <TableColumn fx:id="filepath" prefWidth="244.0" text="name" />
+                <TableColumn fx:id="editCol" prefWidth="165.0" text="edit" />
+            </columns>
+        </TableView>
+        <HBox layoutX="440.0" layoutY="97.0" prefHeight="52.0" prefWidth="224.0" spacing="20.0">
+            <children>
+                <FontAwesomeIconView fill="#2196f3" glyphName="USER_PLUS" onMouseClicked="#getAddView" size="45" styleClass="btn" wrappingWidth="47.42856979370117" />
+                <FontAwesomeIconView fill="#00e676" glyphName="REFRESH" onMouseClicked="#refresh" size="45" styleClass="btn" />
+            </children>
+        </HBox>
+      <VBox layoutX="-6.0" prefHeight="541.0" prefWidth="208.0" style="-fx-background-color: #333645;">
+         <children>
+            <Label prefHeight="70.0" prefWidth="218.0" text="Panel" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="76.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/ben-affleck.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane prefHeight="170.0" prefWidth="191.0">
+               <children>
+                  <JFXButton accessibleText="btn_found" prefHeight="45.0" prefWidth="208.0" text="Product" textFill="#e85f5f" />
+                  <JFXButton layoutY="124.0" prefHeight="45.0" prefWidth="208.0" text="Reclamation" textFill="#f5efef" />
+                  <JFXButton layoutY="209.0" prefHeight="39.0" prefWidth="208.0" text="HOME" textFill="#f2f0f0" />
+                  <JFXButton layoutY="159.0" prefHeight="45.0" prefWidth="208.0" text="CHART" textFill="#f2f0f0" />
+                  <JFXButton layoutY="54.0" prefHeight="45.0" prefWidth="208.0" text="Event" textFill="#f5efef" />
+                  <JFXButton layoutY="89.0" prefHeight="45.0" prefWidth="208.0" text="Voiture" textFill="#f2f0f0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="202.0" layoutY="496.0" prefHeight="45.0" prefWidth="684.0" style="-fx-background-color: #333645;">
+         <children>
+            <Button fx:id="back_button" layoutX="458.0" layoutY="7.0" mnemonicParsing="false" onAction="#back_action" prefHeight="32.0" prefWidth="52.0" style="-fx-background-radius: 20 20 20 20;" text="Back" />
+            <Button fx:id="buttonHD" layoutX="148.0" layoutY="7.0" mnemonicParsing="false" onAction="#Voiture" onMouseClicked="#print" prefHeight="32.0" prefWidth="121.0" style="-fx-background-radius: 20 20 20 20;" text="Voiture Admin" textFill="#2c2929">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
