@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import org.controlsfx.control.Rating?>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDetailBlogController">
+     <children>
+      <VBox prefHeight="440.0" prefWidth="208.0" style="-fx-background-color: #333645;">
+         <children>
+            <Label prefHeight="70.0" prefWidth="218.0" text="Admin Panel" textFill="#fcfcfc">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="80.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/11.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <AnchorPane prefHeight="170.0" prefWidth="260.0">
+               <children>
+                   <JFXButton fx:id="btn_event" layoutY="80.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Voyage" textFill="#f2f0f0" />
+                  <JFXButton fx:id="btn_hotel" accessibleText="btn_feed" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Event" textFill="#fcf8f8" />
+                  <JFXButton fx:id="btn_voyage" layoutY="45.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Hotel" textFill="#f5efef" />
+                  <JFXButton fx:id="btn_shop" accessibleText="btn_feed" layoutX="7.0" layoutY="125.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Shopping Mall" textFill="#fcf8f8" />
+
+               </children>
+            </AnchorPane>
+             <JFXButton fx:id="btn_rec" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="208.0" text="Reclamation" textFill="#fcf8f8" />
+         </children></VBox>
+      <JFXButton fx:id="logout" layoutX="653.0" layoutY="14.0" style="-fx-background-color: #333645;" text="LOG OUT" textFill="#fafbfc" />
+      <Label text="Label" />
+      <Label layoutX="238.0" layoutY="56.0" prefHeight="45.0" prefWidth="83.0" text="Sujet :" />
+      <Label fx:id="sujet" layoutX="368.0" layoutY="68.0" prefHeight="21.0" prefWidth="62.0" text="ea" />
+      <Label layoutX="238.0" layoutY="124.0" text="Destination" />
+      <Label fx:id="destination" layoutX="364.0" layoutY="124.0" text="b" />
+     
+      
+      <Label layoutX="238.0" layoutY="188.0" text="Description" />
+      <Label fx:id="description" layoutX="365.0" layoutY="191.0" text="c" />
+        <Label layoutX="238.0" layoutY="220.0" text="Date" />
+      <Label fx:id="date" layoutX="365.0" layoutY="250.0" text="m" />
+      <Label layoutX="238.0" layoutY="250.0" text="Ratin" />
+      <Label fx:id="ratin" layoutX="365.0" layoutY="290.0" text="r" />
+      <Button layoutX="639.0" layoutY="320.0" mnemonicParsing="false" onAction="#rate" text="rate" />
+      
+      <Rating fx:id="rate" layoutX="578.0" layoutY="270.0" prefHeight="18.0" prefWidth="158.0" />
+    
+      <JFXButton fx:id="savetoword" layoutX="399.0" layoutY="341.0" onAction="#savetoword" prefHeight="45.0" prefWidth="143.0" style="-fx-background-color: pink;" text="Telecharger Pdf" />
+      <Label alignment="CENTER" layoutX="335.0" layoutY="11.0" prefHeight="38.0" prefWidth="221.0" style="-fx-background-color: pink;" text="Votre Blog" textAlignment="CENTER" />
+   </children>
+</AnchorPane>
